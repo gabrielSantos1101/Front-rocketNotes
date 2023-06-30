@@ -1,9 +1,11 @@
-import { Wrapper } from "./style.js";
+import { SingIn } from '../SingIn/index.jsx'
+import { Wrapper } from './style.js'
 
 export function Details() {
   return (
     <Wrapper>
-      <h1>Hello world</h1>
+      <h1>Rocket Notes</h1>
+      <SingIn />
     </Wrapper>
   )
 }
