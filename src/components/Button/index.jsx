@@ -1,3 +1,5 @@
+import { Wrap } from './styles'
+
 export function Button() {
-  return <button>Entrar</button>
+  return <Wrap type="button"> Entrar </Wrap>
 }
