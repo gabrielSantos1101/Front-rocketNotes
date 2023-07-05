@@ -11,7 +11,7 @@ export const Wrap = styled.button`
   text-transform: uppercase;
 
   border: 0;
-  border-radius: 10px;
+  border-radius: ${({ radius }) => (radius ? 'none' : '10px')};
 
   padding: 0 16px;
   margin-top: 16px;

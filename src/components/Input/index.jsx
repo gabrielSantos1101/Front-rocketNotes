@@ -1,3 +1,5 @@
+import { WrapInput } from './styles'
+
 export function Input({ Type, placeholder }) {
-  return <input type={Type} placeholder={placeholder} />
+  return <WrapInput type={Type} placeholder={placeholder} />
 }
