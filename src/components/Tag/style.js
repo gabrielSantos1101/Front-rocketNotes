@@ -11,4 +11,8 @@ export const Wrap = styled.span`
   border-radius: 5px;
 
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 `
