@@ -1,11 +1,12 @@
-import { SingIn } from '../SingIn/index.jsx'
+import { Header } from '../../components/Header/index.jsx'
 import { Wrapper } from './style.js'
 
 export function Details() {
   return (
     <Wrapper>
-      <h1>Rocket Notes</h1>
-      <SingIn />
+      <Header />
+      <button>Excluir Nota</button>
+      <h1>Introdução ao React</h1>
     </Wrapper>
   )
 }
