@@ -8,7 +8,8 @@ export const Wrap = styled.button`
   color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
   font-weight: 500;
-  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif;
+  /* text-transform: uppercase; */
 
   border: 0;
   border-radius: ${({ radius }) => (radius ? 'none' : '10px')};

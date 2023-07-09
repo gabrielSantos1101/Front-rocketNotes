@@ -5,8 +5,8 @@ export const Wrap = styled.div`
   gap: 6px;
 
   img {
-    width: 4.375rem;
-    height: 4.375rem;
+    width: 4rem;
+    height: 4rem;
 
     border-radius: 9999px;
   }
