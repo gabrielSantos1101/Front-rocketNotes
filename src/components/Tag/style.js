@@ -8,6 +8,7 @@ export const Wrap = styled.span`
   width: fit-content;
   min-width: 4rem;
   padding: 0.25rem 0.5rem;
+  margin-right: 0.375rem;
   border-radius: 5px;
 
   background-color: ${({ theme }) => theme.COLORS.ORANGE};

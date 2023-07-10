@@ -1,6 +1,7 @@
 import { styled } from 'styled-components'
 
 export const Wrap = styled.div`
+  text-align: left;
   & h2 {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
