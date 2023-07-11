@@ -20,4 +20,8 @@ export const Wrap = styled.div`
   & ul li {
     list-style: none;
   }
+
+  & ul li a:hover {
+    color: ${({ theme }) => theme.COLORS.ORANGE};
+  }
 `

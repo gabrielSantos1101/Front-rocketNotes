@@ -25,6 +25,7 @@ export default createGlobalStyle`
 body {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: #f1f1f1;

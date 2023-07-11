@@ -10,34 +10,36 @@ export function Details({ width }) {
     <Wrapper width={'40'}>
       <Header />
       <div className="wrap">
-        <TextButton className="textButton" title={'Excluir nota'} />
-
-        <h1>Introdução ao React</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-
-        <Section title="Links úteis">
-          <ul>
-            <li>
-              <a href="#">teste</a>
-            </li>
-            <li>
-              <a href="#">teste</a>
-            </li>
-            <li>
-              <a href="#">teste</a>
-            </li>
-          </ul>
-        </Section>
-        <Section title="Marcadores">
-          <Tag title="Express" />
-          <Tag title="NodeJS" />
-        </Section>
-        <Button title="Voltar" />
+        <div className="content">
+          <TextButton className="textButton" title={'Excluir nota'} />
+          <h1>Introdução ao React</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+          </p>
+          <Section title="Links úteis">
+            <ul>
+              <li>
+                <a href="#">https://github.com</a>
+              </li>
+              <li>
+                <a href="#">https://github.com</a>
+              </li>
+              <li>
+                <a href="#">https://github.com</a>
+              </li>
+            </ul>
+          </Section>
+          <Section title="Marcadores">
+            <Tag title="Express" />
+            <Tag title="NodeJS" />
+          </Section>
+          <Button title="Voltar" />
+        </div>
       </div>
     </Wrapper>
   )
