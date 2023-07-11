@@ -7,6 +7,7 @@ export const Wrap = styled.div`
   margin-top: 1.75rem;
 
   margin-inline: auto;
+
   & h2 {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
@@ -23,5 +24,13 @@ export const Wrap = styled.div`
 
   & ul li a:hover {
     color: ${({ theme }) => theme.COLORS.ORANGE};
+  }
+
+  & ul li a:hover::selection {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
+
+  & ul li a::selection {
+    background-color: ${({ theme }) => theme.COLORS.ORANGE};
   }
 `
