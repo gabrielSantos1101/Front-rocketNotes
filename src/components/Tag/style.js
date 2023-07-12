@@ -10,6 +10,7 @@ export const Wrap = styled.span`
   padding: 0.25rem 0.5rem;
   margin-right: 0.375rem;
   border-radius: 5px;
+  text-align: center;
 
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
 
