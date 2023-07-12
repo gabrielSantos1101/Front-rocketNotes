@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 export const Wrap = styled.div`
   width: ${({ width }) => (width ? `${width}%` : '100%')};
-  max-width: 62.5rem;
+  /* max-width: 62.5rem; */
   text-align: left;
   margin-top: 1.75rem;
 

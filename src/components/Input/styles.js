@@ -8,7 +8,7 @@ export const WrapInput = styled.input`
   border-radius: 0.625rem;
   border: none;
 
-  padding-left: 3rem;
+  padding-inline: 2rem;
 
   background: ${({ theme }) => theme.COLORS.BACKGROUND_900} ${lock};
   :placeholder {
