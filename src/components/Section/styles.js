@@ -25,6 +25,11 @@ export const Wrap = styled.div`
     font-weight: 400;
   }
 
+  & h2::selection {
+    background-color: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
+
   & ul li {
     list-style: none;
   }

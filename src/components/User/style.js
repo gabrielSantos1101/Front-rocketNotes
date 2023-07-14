@@ -21,4 +21,9 @@ export const Wrap = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
   }
+
+  ::selection {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    background-color: ${({ theme }) => theme.COLORS.ORANGE};
+  }
 `
