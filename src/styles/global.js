@@ -44,4 +44,19 @@ button, a {
 button:hover, a:hover {
     filter: brightness(0.9);
 }
+
+div::-webkit-scrollbar {
+  width: 1.25rem;
+}
+
+div::-webkit-scrollbar-track {
+  margin-block-start: 2.75rem;
+}
+
+div::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 1rem 1rem ${({ theme }) => theme.COLORS.ORANGE};
+  border: solid 7px transparent;
+  border-radius: 2rem;
+  background-clip: padding-box;
+}
 `
