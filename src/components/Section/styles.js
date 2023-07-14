@@ -1,8 +1,15 @@
 import { styled } from 'styled-components'
 
 export const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+
   width: ${({ width }) => (width ? `${width}%` : '100%')};
-  /* max-width: 62.5rem; */
+  height: 100%;
+  max-height: calc(100vh - 17.5rem);
+
   text-align: left;
   margin-top: 1.75rem;
 

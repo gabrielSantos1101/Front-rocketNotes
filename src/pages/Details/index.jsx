@@ -38,7 +38,7 @@ export function Details({ width }) {
             <Tag title="Express" />
             <Tag title="NodeJS" />
           </Section>
-          <Button title="Voltar" />
+          <Button title="Voltar" radius={true} />
         </div>
       </div>
     </Wrapper>
