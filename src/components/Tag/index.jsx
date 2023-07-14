@@ -1,5 +1,5 @@
 import { Wrap } from './style'
 
-export function Tag({ title }) {
-  return <Wrap>{title}</Wrap>
+export function Tag({ title, ...rest }) {
+  return <Wrap {...rest}>{title}</Wrap>
 }

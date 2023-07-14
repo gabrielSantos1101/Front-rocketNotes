@@ -1,13 +1,14 @@
 import { Tag } from '../Tag'
 import { Wrap } from './styles'
 
-export function Note({ title }) {
+export function Note({ data, ...rest }) {
   return (
-    <Wrap>
-      <h3>{title}</h3>
+    <Wrap {...rest}>
+      <h3>{data.title}</h3>
       <div>
-        <Tag title="React" />
-        <Tag title="React" />
+        {data.tags.map((tag) => (
+          <Tag key={tag.id} title={tag.name} />
+        ))}
       </div>
     </Wrap>
   )
