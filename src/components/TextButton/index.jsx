@@ -1,8 +1,8 @@
 import { Wrap } from './styles'
 
-export function TextButton({ title, ...rest }) {
+export function TextButton({ title, isActive = false, ...rest }) {
   return (
-    <Wrap type="button" {...rest}>
+    <Wrap type="button" $isActive={isActive.toString()} {...rest}>
       {title}
     </Wrap>
   )
