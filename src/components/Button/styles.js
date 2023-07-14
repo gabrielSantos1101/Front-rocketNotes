@@ -11,12 +11,13 @@ export const Wrap = styled.button`
   font-family: 'Roboto Slab', serif;
 
   border: 0;
-  border-radius: ${({ radius }) => (radius ? 'none' : '10px')};
+  border-radius: ${({ round }) => (round === 'true' ? 'none' : '10px')};
 
   padding: 0 1rem;
   margin-top: 2.125rem;
 
   &:disabled {
     opacity: 0.5;
+    cursor: not-allowed;
   }
 `

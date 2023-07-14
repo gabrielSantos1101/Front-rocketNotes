@@ -1,8 +1,8 @@
 import { Wrap } from './styles'
 
-export function Button({ title, loading = false, radius = false }) {
+export function Button({ title, loading = false, round = false }) {
   return (
-    <Wrap type="button" disabled={loading} radius={radius.toString()}>
+    <Wrap type="button" disabled={loading} round={round.toString()}>
       {title}
     </Wrap>
   )
