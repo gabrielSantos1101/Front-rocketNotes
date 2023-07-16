@@ -29,6 +29,11 @@ body {
     
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: #f1f1f1;
+
+    #root {
+      height: 100%;
+      width: 100%;
+    }
 }
 
 a {
