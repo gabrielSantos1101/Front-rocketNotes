@@ -20,4 +20,9 @@ export const Wrap = styled.button`
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  &::selection {
+    background: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
 `
