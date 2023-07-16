@@ -11,7 +11,7 @@ export const Wrap = styled.button`
   font-family: 'Roboto Slab', serif;
 
   border: 0;
-  border-radius: ${({ round }) => (round ? 'none' : '10px')};
+  border-radius: ${({ $round }) => ($round ? 'none' : '10px')};
 
   padding: 0 1rem;
   margin-top: 2.125rem;
