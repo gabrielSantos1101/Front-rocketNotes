@@ -1,13 +1,16 @@
+import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { WrapInput } from './styles'
+export function Input({ Type, icon: Icon, id, placeholder, ...rest }) {
+  const inputId = uuidv4()
 
-export function Input({ Type, icon: Icon, placeholder, ...rest }) {
   return (
     <WrapInput $isicon={Icon && true.toString()}>
-      <label htmlFor="input">
+      <label htmlFor={inputId}>
         {Icon && <Icon size={20} />}
-        {/* if you don't have an icon use nothing */}
+        {/* if you don't have an icon, use nothing */}
       </label>
-      <input type={Type} placeholder={placeholder} {...rest} />
+      <input type={Type} placeholder={placeholder} {...rest} id={inputId} />
     </WrapInput>
   )
 }
