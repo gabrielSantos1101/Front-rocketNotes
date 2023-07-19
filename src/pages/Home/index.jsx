@@ -29,7 +29,7 @@ export function Home() {
           </li>
         </ul>
         <NewContent>
-          <Button title="+ Criar nota" round={true} />
+          <Button title="+ Criar nota" />
         </NewContent>
       </Menu>
       <Wrap>

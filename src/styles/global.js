@@ -36,6 +36,11 @@ body {
     }
 }
 
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection,p::selection, span::selection {
+  color: ${({ theme }) => theme.COLORS.WHITE};
+  background-color: ${({ theme }) => theme.COLORS.ORANGE};
+}
+
 a {
     text-decoration: none;
     color: inherit;

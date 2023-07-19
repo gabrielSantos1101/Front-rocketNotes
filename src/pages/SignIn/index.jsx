@@ -1,20 +1,19 @@
-import { EnvelopeSimple, LockSimple, User } from '@phosphor-icons/react'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { TextButton } from '../../components/TextButton'
 import { Wrapper } from './styles'
-export function SingUp() {
+export function SignIn() {
   return (
     <Wrapper>
       <div className="content">
         <h1>Rocket Notes</h1>
         <p>Aplicação para salvar e gerenciar seus links úteis.</p>
         <form action="">
-          <h2>Crie sua conta</h2>
-          <Input Type="text" placeholder="Name" icon={User} />
-          <Input Type="email" placeholder="E-mail" icon={EnvelopeSimple} />
-          <Input Type="password" placeholder="Senha" icon={LockSimple} />
-          <Button title="Entrar" round={true} />
+          <h2>faça seu login</h2>
+
+          <Input Type="email" placeholder="E-mail" />
+          <Input Type="password" placeholder="Senha" />
+          <Button title="Entrar" round />
         </form>
 
         <TextButton title="Criar conta" />

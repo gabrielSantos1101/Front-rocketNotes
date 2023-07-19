@@ -53,5 +53,6 @@ export const Wrapper = styled.div`
     object-fit: cover;
     filter: brightness(0.4);
     opacity: 0.5;
+    pointer-events: none;
   }
 `

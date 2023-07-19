@@ -25,7 +25,7 @@ export function Profile() {
             />
             <Input Type="password" placeholder="Nova senha" icon={LockSimple} />
           </div>
-          <Button title="Salvar" />
+          <Button title="Salvar" round={true} />
         </form>
       </div>
     </Wrapper>
