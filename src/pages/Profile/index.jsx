@@ -1,17 +1,19 @@
-import { Camera, EnvelopeSimple, LockSimple, User } from '@phosphor-icons/react'
+import {
+  ArrowLeft,
+  EnvelopeSimple,
+  LockSimple,
+  User,
+} from '@phosphor-icons/react'
+import { Avatar } from '../../components/Avatar'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { Wrapper } from './styles'
+
 export function Profile() {
   return (
     <Wrapper>
       <div className="content">
-        <div className="profile">
-          <img src="https://github.com/gabrielSantos1101.png" alt="" />
-          <span>
-            <Camera size={20} />
-          </span>
-        </div>
+        <Avatar />
         <form action="">
           <div>
             <Input Type="text" placeholder="Name" icon={User} />
@@ -27,6 +29,9 @@ export function Profile() {
           </div>
           <Button title="Salvar" round={true} />
         </form>
+        <button className="arrow">
+          <ArrowLeft size={20} />
+        </button>
       </div>
     </Wrapper>
   )

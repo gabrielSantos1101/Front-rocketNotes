@@ -70,8 +70,6 @@ export const NewContent = styled.div`
   display: flex;
   margin-block: auto;
 
-  /* background-color: ${({ theme }) => theme.COLORS.ORANGE}; */
-
   & button {
     margin-top: 0;
     color: ${({ theme }) => theme.COLORS.BACKGROUND_800};

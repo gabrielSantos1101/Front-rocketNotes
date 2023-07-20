@@ -29,11 +29,6 @@ export const WrapInput = styled.div`
     background: transparent;
     border: none;
 
-    &::selection {
-      background: ${({ theme }) => theme.COLORS.ORANGE};
-      color: ${({ theme }) => theme.COLORS.WHITE};
-    }
-
     &:focus {
       outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
     }

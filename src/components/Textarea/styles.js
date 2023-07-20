@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 export const Area = styled.textarea`
   width: 100%;
   min-height: 9.375rem;
+  max-height: 28.125rem;
 
   border-radius: 0.625rem;
   border: none;
@@ -11,6 +12,6 @@ export const Area = styled.textarea`
   padding: 1.25rem;
   margin-top: 1rem;
 
-  overflow-y: hidden;
+  overflow-y: auto;
   resize: none;
 `

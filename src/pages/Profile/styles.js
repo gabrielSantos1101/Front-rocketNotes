@@ -69,45 +69,21 @@ export const Wrapper = styled.div`
         margin-top: 0;
       }
     }
-  }
 
-  & .profile {
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-
-    margin-inline: auto;
-    margin-bottom: 4rem;
-
-    & img {
-      width: 11.25rem;
-      height: 11.25rem;
-      object-fit: cover;
-      border-radius: 100%;
-    }
-
-    & span {
-      display: grid;
-      place-items: center;
-      width: 3rem;
-      height: 3rem;
-
+    & .arrow {
       position: absolute;
-      bottom: 0;
-      right: 0;
+      left: 8rem;
 
-      cursor: pointer;
+      height: 1.25rem;
+
+      border: none;
       border-radius: 100%;
-      background-color: ${({ theme }) => theme.COLORS.ORANGE};
+      background: none;
+      cursor: unset;
 
-      &:hover {
-        & svg path {
-          color: ${({ theme }) => theme.COLORS.WHITE};
-        }
-      }
-
-      & svg path {
-        color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+      & svg {
+        cursor: pointer;
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
       }
     }
   }

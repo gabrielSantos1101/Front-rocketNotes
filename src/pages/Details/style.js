@@ -9,17 +9,6 @@ export const Wrapper = styled.div`
   background: unset;
   padding-bottom: 3rem;
 
-  & h1::selection,
-  & h2::selection,
-  & h3::selection,
-  & h4::selection,
-  & h5::selection,
-  & h6::selection,
-  & p::selection {
-    color: ${({ theme }) => theme.COLORS.WHITE};
-    background-color: ${({ theme }) => theme.COLORS.ORANGE};
-  }
-
   & .content {
     width: 100%;
     max-width: ${({ width }) => (width ? `${width}%` : '100%')};
