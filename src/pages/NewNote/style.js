@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   font-size: 1rem;
   color: #f1f1f1;
   background: unset;
-  padding-bottom: 3rem;
 
   & .content {
     width: 100%;
@@ -25,7 +24,7 @@ export const Form = styled.form`
   min-width: 20rem;
   max-width: ${({ width }) => (width ? `${width}%` : '100%')};
 
-  & div:first-child {
+  & .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +38,7 @@ export const Form = styled.form`
     }
   }
 
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
   padding-inline: 0.3125rem;
   margin-inline: auto;
 `

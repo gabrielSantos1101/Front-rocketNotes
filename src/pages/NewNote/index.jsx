@@ -13,7 +13,7 @@ export function NewNote({ width }) {
       <Header />
       <div className="content">
         <Form className="content" width={'40'}>
-          <div>
+          <div className="top">
             <h1>Criar nota</h1>
             <TextButton className="textButton" title={'voltar'} />
           </div>
@@ -28,14 +28,16 @@ export function NewNote({ width }) {
             />
             <NewItem placeholder="Novo link" />
           </Section>
-          <Section title="Marcadores">
-            <NewItem
-              placeholder="Novo marcador"
-              isFit={true}
-              isNew={false}
-              value="Node"
-            />
-            <NewItem placeholder="Novo marcador" isFit={true} />
+          <Section title="Marcadores" isInline>
+            <div className="tags">
+              <NewItem
+                placeholder="Novo marcador"
+                isFit={true}
+                isNew={false}
+                value="Node"
+              />
+              <NewItem placeholder="Novo marcador" isFit={true} />
+            </div>
           </Section>
           <Button title="salvar" round />
         </Form>
