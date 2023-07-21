@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Area } from './styles'
 
-export function Textarea({ placeholder, value = '', onclick, ...rest }) {
+export function Textarea({ placeholder, value = '', ...rest }) {
   const [text, setText] = useState('')
 
   function autoresize(e) {
@@ -15,6 +15,7 @@ export function Textarea({ placeholder, value = '', onclick, ...rest }) {
       value={text}
       onChange={(e) => setText(e.target.value)}
       placeholder={placeholder}
+      {...rest}
     />
   )
 }
