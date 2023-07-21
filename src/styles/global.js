@@ -36,7 +36,11 @@ body {
     }
 }
 
-h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection,p::selection, span::selection {
+input:focus, textarea:focus {
+  outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
+}
+
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection,p::selection, span::selection, textarea::selection, input::selection {
   color: ${({ theme }) => theme.COLORS.WHITE};
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
 }
@@ -55,15 +59,15 @@ button:hover, a:hover {
     filter: brightness(0.9);
 }
 
-div::-webkit-scrollbar {
+div::-webkit-scrollbar, textarea::-webkit-scrollbar{
   width: 1.25rem;
 }
 
-div::-webkit-scrollbar-track {
+div::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track{
   margin-block-start: 2.75rem;
 }
 
-div::-webkit-scrollbar-thumb {
+div::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb{
   box-shadow: inset 0 0 1rem 1rem ${({ theme }) => theme.COLORS.ORANGE};
   border: solid 7px transparent;
   border-radius: 2rem;

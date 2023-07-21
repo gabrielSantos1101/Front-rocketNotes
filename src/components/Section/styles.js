@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const Wrap = styled.div`
+export const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -45,4 +45,17 @@ export const Wrap = styled.div`
   & ul li a::selection {
     background-color: ${({ theme }) => theme.COLORS.ORANGE};
   }
+
+  ${({ $isinline }) =>
+    !$isinline
+      ? `& .tags{ display: flex; 
+        flex-direction: column;
+      }`
+      : `
+      & .tags {
+      display: flex; 
+        flex-direction: row;
+        gap: 1.1875rem;
+      }
+        `};
 `

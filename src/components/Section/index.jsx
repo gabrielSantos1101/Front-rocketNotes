@@ -1,8 +1,8 @@
 import { Wrap } from './styles'
 
-export function Section({ title, children }) {
+export function Section({ title, children, isInline = false }) {
   return (
-    <Wrap>
+    <Wrap $isinline={isInline}>
       <h2>{title}</h2>
       {children}
     </Wrap>
