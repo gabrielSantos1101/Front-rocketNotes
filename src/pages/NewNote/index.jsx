@@ -15,7 +15,7 @@ export function NewNote({ width }) {
         <Form className="content" width={'40'}>
           <div className="top">
             <h1>Criar nota</h1>
-            <TextButton className="textButton" title={'voltar'} />
+            <TextButton className="textButton" title={'voltar'} origin={'/'} />
           </div>
           <Input type="text" placeholder="Título" />
           <Textarea placeholder={'Observações'} />

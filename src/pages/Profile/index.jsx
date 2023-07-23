@@ -4,6 +4,7 @@ import {
   LockSimple,
   User,
 } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import { Avatar } from '../../components/Avatar'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
@@ -29,9 +30,9 @@ export function Profile() {
           </div>
           <Button title="Salvar" round={true} />
         </form>
-        <button className="arrow">
+        <Link to="/" className="arrow">
           <ArrowLeft size={20} />
-        </button>
+        </Link>
       </div>
     </Wrapper>
   )

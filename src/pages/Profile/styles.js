@@ -72,6 +72,7 @@ export const Wrapper = styled.div`
 
     & .arrow {
       position: absolute;
+      top: 3.5rem;
       left: 8rem;
 
       height: 1.25rem;
@@ -79,7 +80,10 @@ export const Wrapper = styled.div`
       border: none;
       border-radius: 100%;
       background: none;
-      cursor: unset;
+
+      &:hover svg path {
+        color: ${({ theme }) => theme.COLORS.ORANGE};
+      }
 
       & svg {
         cursor: pointer;
