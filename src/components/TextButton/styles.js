@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const Wrap = styled.button`
+export const Wrap = styled.div`
   color: ${({ theme, $isActive }) =>
     $isActive ? theme.COLORS.ORANGE : theme.COLORS.GRAY_100};
   font-size: 1rem;

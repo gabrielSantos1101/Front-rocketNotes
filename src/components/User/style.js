@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import { styled } from 'styled-components'
 
-export const Wrap = styled.div`
+export const Wrap = styled(Link)`
   display: flex;
   gap: 6px;
 

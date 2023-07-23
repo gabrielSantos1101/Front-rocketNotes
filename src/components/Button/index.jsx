@@ -1,8 +1,8 @@
 import { Wrap } from './styles'
 
-export function Button({ title, loading = false, round = false }) {
+export function Button({ title, to, loading = false, round = false }) {
   return (
-    <Wrap type="button" disabled={loading} $round={round}>
+    <Wrap to={to} disabled={loading} $round={round}>
       {title}
     </Wrap>
   )

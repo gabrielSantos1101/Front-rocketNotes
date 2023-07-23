@@ -70,7 +70,7 @@ export const NewContent = styled.div`
   display: flex;
   margin-block: auto;
 
-  & button {
+  & a {
     margin-top: 0;
     color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
   }
