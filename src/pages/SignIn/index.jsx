@@ -2,8 +2,13 @@ import { EnvelopeSimple, LockSimple } from '@phosphor-icons/react'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { TextButton } from '../../components/TextButton'
+import { useAuth } from '../../hooks/auth'
 import { Wrapper } from './styles'
+
 export function SignIn() {
+  const data = useAuth()
+  console.log(data)
+
   return (
     <Wrapper>
       <div className="content">

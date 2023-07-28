@@ -1,9 +1,44 @@
 import { EnvelopeSimple, LockSimple, User } from '@phosphor-icons/react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { TextButton } from '../../components/TextButton'
+import { api } from '../../services/api'
 import { Wrapper } from './styles'
+
 export function SignUp() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  async function handleSignUp() {
+    if (!name || !email || !password) {
+      toast.error('please fill all fields')
+      return
+    }
+
+    await api
+      .post('/users', {
+        name,
+        email,
+        password,
+      })
+      .then(() => {
+        toast.success('Account created successfully')
+        navigate('/')
+      })
+      .catch((er) => {
+        if (er.response) {
+          toast.error(er.response.data.message)
+        } else {
+          toast.error(`try again later`)
+        }
+      })
+  }
+
   return (
     <Wrapper>
       <div className="content">
@@ -11,10 +46,31 @@ export function SignUp() {
         <p>Aplicação para salvar e gerenciar seus links úteis.</p>
         <form action="">
           <h2>Crie sua conta</h2>
-          <Input Type="text" placeholder="Name" icon={User} />
-          <Input Type="email" placeholder="E-mail" icon={EnvelopeSimple} />
-          <Input Type="password" placeholder="Senha" icon={LockSimple} />
-          <Button title="Cadastrar" round={true} />
+          <Input
+            Type="text"
+            placeholder="Name"
+            icon={User}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Input
+            Type="email"
+            placeholder="E-mail"
+            icon={EnvelopeSimple}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            Type="password"
+            placeholder="Senha"
+            icon={LockSimple}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            title="Cadastrar"
+            round={true}
+            onClick={() => {
+              handleSignUp()
+            }}
+          />
         </form>
 
         <TextButton title="Voltar para login" origin={'/'} />
