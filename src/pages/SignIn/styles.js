@@ -25,26 +25,6 @@ export const Wrapper = styled.div`
 
       margin-bottom: 3rem;
     }
-
-    & form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-
-      padding-inline: 10rem;
-      margin-bottom: 7.75rem;
-
-      & h2 {
-        text-align: center;
-        font-size: 1.5rem;
-
-        margin-bottom: 2.5rem;
-      }
-
-      & button {
-        margin-top: 1.5rem;
-      }
-    }
   }
 
   & img {
@@ -54,5 +34,25 @@ export const Wrapper = styled.div`
     filter: brightness(0.4);
     opacity: 0.5;
     pointer-events: none;
+  }
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding-inline: 10rem;
+  margin-bottom: 7.75rem;
+
+  & h2 {
+    text-align: center;
+    font-size: 1.5rem;
+
+    margin-bottom: 2.5rem;
+  }
+
+  & button {
+    margin-top: 1.5rem;
   }
 `
