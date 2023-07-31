@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { WrapInput } from './styles'
-export function Input({ Type, icon: Icon, placeholder, ...rest }) {
+export function Input({ Type, icon: Icon, placeholder, onChange, ...rest }) {
   const inputId = uuidv4()
 
   return (
@@ -10,7 +10,13 @@ export function Input({ Type, icon: Icon, placeholder, ...rest }) {
         {Icon && <Icon size={20} />}
         {/* if you don't have an icon, use nothing */}
       </label>
-      <input type={Type} placeholder={placeholder} {...rest} id={inputId} />
+      <input
+        type={Type}
+        placeholder={placeholder}
+        {...rest}
+        id={inputId}
+        onChange={onChange}
+      />
     </WrapInput>
   )
 }

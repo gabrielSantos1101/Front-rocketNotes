@@ -1,26 +1,42 @@
 import { EnvelopeSimple, LockSimple } from '@phosphor-icons/react'
+import { useState } from 'react'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { TextButton } from '../../components/TextButton'
 import { useAuth } from '../../hooks/auth'
-import { Wrapper } from './styles'
+import { Form, Wrapper } from './styles'
 
 export function SignIn() {
-  const data = useAuth()
-  console.log(data)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const { signIn } = useAuth()
+
+  function handleSignIn() {
+    signIn({ email, password })
+  }
 
   return (
     <Wrapper>
       <div className="content">
         <h1>Rocket Notes</h1>
         <p>Aplicação para salvar e gerenciar seus links úteis.</p>
-        <form action="">
+        <Form>
           <h2>faça seu login</h2>
 
-          <Input Type="email" placeholder="E-mail" icon={EnvelopeSimple} />
-          <Input Type="password" placeholder="Senha" icon={LockSimple} />
-          <Button title="Entrar" round />
-        </form>
+          <Input
+            Type="email"
+            placeholder="E-mail"
+            icon={EnvelopeSimple}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            Type="password"
+            placeholder="Senha"
+            icon={LockSimple}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button title="Entrar" round onClick={handleSignIn} />
+        </Form>
 
         <TextButton title="Criar conta" origin="/register" />
       </div>
