@@ -92,15 +92,19 @@ export function Home() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </Search>
-          <Section title="My notes">
-            {notes.map((note) => (
-              <Note
-                key={String(note.id)}
-                data={note}
-                onClick={() => handleDetails(note.id)}
-              />
-            ))}
-          </Section>
+          {notes.length === 0 ? (
+            <Section title="You have no notes registered"></Section>
+          ) : (
+            <Section title="My notes">
+              {notes.map((note) => (
+                <Note
+                  key={String(note.id)}
+                  data={note}
+                  onClick={() => handleDetails(note.id)}
+                />
+              ))}
+            </Section>
+          )}
         </div>
       </Wrap>
     </Wrapper>
