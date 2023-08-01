@@ -23,12 +23,11 @@ export function Profile() {
   const [passwordNew, setPasswOrdNew] = useState()
   const navigate = useNavigate()
 
-  const avatarUrl =
-    user.name === 'Gabriel Santos' && user.avatar
-      ? 'https://avatars.githubusercontent.com/u/105078208?v=4'
-      : user.avatar
-      ? `${api.defaults.baseURL}/files/${user.avatar}`
-      : avatarPlaceholder
+  const avatarUrl = user.avatar
+    ? user.avatar
+    : user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder
   const [avatar, setAvatar] = useState(avatarUrl)
   const [avatarFile, setAvatarFile] = useState(null)
 

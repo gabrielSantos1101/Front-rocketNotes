@@ -35,6 +35,17 @@ export const Wrapper = styled.div`
     opacity: 0.5;
     pointer-events: none;
   }
+
+  & .footerButton {
+    display: flex;
+    width: fit-content;
+    text-align: center;
+    padding: 0;
+
+    &:hover {
+      color: ${({ theme }) => theme.COLORS.ORANGE};
+    }
+  }
 `
 
 export const Form = styled.form`

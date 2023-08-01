@@ -14,6 +14,10 @@ export function SignUp() {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
+  function handleBack() {
+    navigate(-1)
+  }
+
   async function handleSignUp() {
     if (!name || !email || !password) {
       toast.error('please fill all fields')
@@ -28,7 +32,7 @@ export function SignUp() {
       })
       .then(() => {
         toast.success('Account created successfully')
-        navigate('/')
+        navigate(-1)
       })
       .catch((er) => {
         if (er.response) {
@@ -73,7 +77,11 @@ export function SignUp() {
           />
         </form>
 
-        <TextButton title="Voltar para login" origin={'/'} />
+        <TextButton
+          className="footerButton"
+          title="Voltar para login"
+          onClick={() => handleBack()}
+        />
       </div>
       <img
         src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"

@@ -63,6 +63,17 @@ export const Wrapper = styled.div`
         margin-top: 1.5rem;
       }
     }
+
+    & .footerButton {
+      display: flex;
+      width: fit-content;
+      text-align: center;
+      padding: 0;
+
+      &:hover {
+        color: ${({ theme }) => theme.COLORS.ORANGE};
+      }
+    }
   }
 
   & img {
