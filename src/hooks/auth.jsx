@@ -31,9 +31,9 @@ export function AuthProvider({ children }) {
       if (hora >= 6 && hora < 12) {
         return `Bom dia ${name}`
       } else if (hora >= 12 && hora < 18) {
-        return `Bom tarde ${name}`
+        return `Boa tarde ${name}`
       } else {
-        return `Bom noite ${name}`
+        return `Boa noite ${name}`
       }
     }
     toast(`${getGreeting()}`)
