@@ -54,6 +54,7 @@ export const Wrap = styled.section`
       : `
       & .tags {
       display: flex; 
+      flex-wrap: wrap;
         flex-direction: row;
         gap: 1.1875rem;
       }

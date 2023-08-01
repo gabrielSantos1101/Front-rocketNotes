@@ -1,21 +1,18 @@
 import { Plus, X } from '@phosphor-icons/react'
-import React, { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import React from 'react'
 import { Wrap } from './styles'
 export function NewItem({
-  isNew = true,
+  isNew = false,
   isFit = false,
   value,
-  $onClick,
+  onClick,
+  onChange,
   placeholder,
   ...rest
 }) {
-  const inputId = uuidv4()
-  const [text, setText] = useState(value)
-
   return (
-    <Wrap $isnew={!value} $isfit={isFit}>
-      <button type="button" onClick={$onClick}>
+    <Wrap $isnew={isNew} $isfit={isFit}>
+      <button type="button" onClick={onClick}>
         {isNew ? (
           <Plus size={20} weight="bold" />
         ) : (
@@ -23,11 +20,10 @@ export function NewItem({
         )}
       </button>
       <input
-        id={inputId}
         type="text"
         placeholder={placeholder}
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={value}
+        onChange={onChange}
         readOnly={!isNew}
         {...rest}
       />
