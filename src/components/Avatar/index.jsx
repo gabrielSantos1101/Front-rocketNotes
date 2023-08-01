@@ -1,16 +1,16 @@
 import { Camera } from '@phosphor-icons/react'
 import { Wrap } from './styles'
 
-export function Avatar() {
+export function Avatar({ url, onChange }) {
   return (
     <Wrap>
-      <img src="https://github.com/gabrielSantos1101.png" alt="" />
+      <img src={`${url}`} alt="image to avatar profile" />
       <label htmlFor="avatarImg">
-        <span title="Alterar foto">
+        <span title="Change photo">
           <Camera size={20} />
         </span>
       </label>
-      <input id="avatarImg" type="file"></input>
+      <input id="avatarImg" type="file" onChange={onChange} />
     </Wrap>
   )
 }

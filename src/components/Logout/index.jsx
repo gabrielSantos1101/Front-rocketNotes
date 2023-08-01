@@ -1,10 +1,10 @@
 import { Power } from '@phosphor-icons/react'
 import { Wrap } from './styles'
 
-export function Logout() {
+export function Logout({ onClick }) {
   return (
     <Wrap>
-      <Power size={35} />
+      <Power onClick={onClick} size={35} />
     </Wrap>
   )
 }

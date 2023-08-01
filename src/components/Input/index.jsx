@@ -1,6 +1,7 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { WrapInput } from './styles'
+
 export function Input({ Type, icon: Icon, placeholder, onChange, ...rest }) {
   const inputId = uuidv4()
 
