@@ -40,7 +40,7 @@ input:focus, textarea:focus {
   outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
 }
 
-h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection,p::selection, span::selection, textarea::selection, input::selection {
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, a::selection, h6::selection,p::selection, span::selection, textarea::selection, input::selection {
   color: ${({ theme }) => theme.COLORS.WHITE};
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
 }
