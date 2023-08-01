@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'https://nice-calf-ring.cyclic.app/',
+  baseURL: 'backend-rocketnotes.gabrielsantosde.repl.co/',
 })

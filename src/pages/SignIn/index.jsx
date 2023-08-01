@@ -19,7 +19,7 @@ export function SignIn() {
     <Wrapper>
       <div className="content">
         <h1>Rocket Notes</h1>
-        <p>Aplicação para salvar e gerenciar seus links úteis.</p>
+        <p>Application to save and manage your useful links.</p>
         <Form>
           <h2>faça seu login</h2>
 
@@ -35,12 +35,12 @@ export function SignIn() {
             icon={LockSimple}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button title="Entrar" round onClick={handleSignIn} />
+          <Button title="Enter" round onClick={handleSignIn} />
         </Form>
 
         <TextButton
           className="footerButton"
-          title="Criar conta"
+          title="Create account"
           origin="/register"
         />
       </div>

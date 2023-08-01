@@ -16,7 +16,7 @@ export function User() {
     <Wrap to="/profile">
       <img src={avatarUrl} alt="Profile image" />
       <div>
-        <span>Bem vindo</span>
+        <span>Welcome</span>
         <h2>{user.name}</h2>
       </div>
     </Wrap>
