@@ -35,6 +35,8 @@ export const Form = styled.form`
     & .textButton {
       display: flex;
       margin: 0;
+      width: fit-content;
+      color: ${({ theme }) => theme.COLORS.ORANGE};
     }
   }
 

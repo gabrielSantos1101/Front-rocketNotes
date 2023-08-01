@@ -8,10 +8,12 @@ import { NewItem } from '../../components/Newitem'
 import { Section } from '../../components/Section'
 import { TextButton } from '../../components/TextButton'
 import { Textarea } from '../../components/Textarea'
+import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api'
 import { Form, Wrapper } from './style.js'
 
 export function NewNote() {
+  const { user } = useAuth()
   const navigate = useNavigate()
 
   const [title, setTitle] = useState('')
@@ -52,10 +54,15 @@ export function NewNote() {
       return
     }
 
-    await api.post('/notes', { title, description, links, tags: Tags })
+    await api.post(`/notes/${user.id}`, {
+      title,
+      description,
+      links,
+      tags: Tags,
+    })
 
     toast.success('Note created!🫶')
-    navigate('/')
+    navigate(-1)
   }
 
   return (
@@ -65,7 +72,11 @@ export function NewNote() {
         <Form className="content" width={'40'}>
           <div className="top">
             <h1>Create Note</h1>
-            <TextButton className="textButton" title={'return'} origin={'/'} />
+            <TextButton
+              className="textButton"
+              title={'return'}
+              onClick={() => navigate(-1)}
+            />
           </div>
           <Input
             type="text"
@@ -74,7 +85,7 @@ export function NewNote() {
           />
           <Textarea placeholder={'description'} setDescValue={setDescription} />
 
-          <Section title="Links úteis">
+          <Section title="Useful links">
             {links.map((link, index) => (
               <NewItem
                 key={String(index)}

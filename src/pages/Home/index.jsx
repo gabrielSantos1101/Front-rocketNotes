@@ -1,12 +1,57 @@
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
 import { Note } from '../../components/Note'
 import { Section } from '../../components/Section'
 import { TextButton } from '../../components/TextButton'
+import { api } from '../../services/api'
 import { Brand, Menu, NewContent, Search, Wrap, Wrapper } from './styles'
 
 export function Home() {
+  const [search, setSearch] = useState('')
+  const [tags, setTags] = useState([])
+  const [tagSelected, setTagSelected] = useState([])
+  const [notes, setNotes] = useState([])
+  const navigate = useNavigate()
+
+  function handleTagSelected(tag) {
+    if (tag === 'all') {
+      return setTagSelected([])
+    }
+
+    if (tagSelected.includes(tag)) {
+      const newTagSelected = tagSelected.filter((t) => t !== tag)
+      setTagSelected(newTagSelected)
+    } else {
+      const newTagSelected = [...tagSelected, tag]
+      setTagSelected(newTagSelected)
+    }
+  }
+
+  function handleDetails(id) {
+    navigate(`/details/${id}`)
+  }
+
+  useEffect(() => {
+    async function fetchTags() {
+      const response = await api.get('/tags')
+      setTags(response.data)
+    }
+    fetchTags()
+  }, [])
+
+  useEffect(() => {
+    async function fetchTags() {
+      const response = await api.get(
+        `/notes?title=${search}&tags=${tagSelected}`,
+      )
+      setNotes(response.data)
+    }
+    fetchTags()
+  }, [tagSelected, search])
+
   return (
     <Wrapper>
       <Menu>
@@ -16,17 +61,22 @@ export function Home() {
 
         <ul>
           <li>
-            <TextButton title="Todos" />
+            <TextButton
+              title="Todos"
+              onClick={() => handleTagSelected('all')}
+              isActive={tagSelected.length === 0}
+            />
           </li>
-          <li>
-            <TextButton title="Frontend" />
-          </li>
-          <li>
-            <TextButton title="Node" />
-          </li>
-          <li>
-            <TextButton title="React" />
-          </li>
+          {tags &&
+            tags.map((tag) => (
+              <li key={tag.id}>
+                <TextButton
+                  title={tag.name}
+                  onClick={() => handleTagSelected(tag.name)}
+                  isActive={tagSelected.includes(tag.name)}
+                />
+              </li>
+            ))}
         </ul>
         <NewContent>
           <Button to="/new" title="+ Criar nota" />
@@ -36,24 +86,20 @@ export function Home() {
         <Header />
         <div className="content">
           <Search>
-            <Input placeholder="Pesquisar Pelo título" Type="search" />
+            <Input
+              placeholder="Search by title"
+              Type="search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </Search>
-          <Section title="Minhas notas">
-            <Note
-              data={{
-                title: 'React Modal',
-                tags: [{ id: 1, name: 'React' }],
-              }}
-            />
-            <Note
-              data={{
-                title: 'Exemplo de Middleware',
-                tags: [
-                  { id: 1, name: 'express' },
-                  { id: 2, name: 'nodeJS' },
-                ],
-              }}
-            />
+          <Section title="My notes">
+            {notes.map((note) => (
+              <Note
+                key={String(note.id)}
+                data={note}
+                onClick={() => handleDetails(note.id)}
+              />
+            ))}
           </Section>
         </div>
       </Wrap>

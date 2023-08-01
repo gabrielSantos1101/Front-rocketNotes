@@ -3,10 +3,11 @@ import {
   Camera,
   EnvelopeSimple,
   LockSimple,
+  Upload,
   User,
 } from '@phosphor-icons/react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
@@ -20,6 +21,7 @@ export function Profile() {
   const [email, setEmail] = useState(user.email)
   const [passwordOld, setPasswOrdOld] = useState()
   const [passwordNew, setPasswOrdNew] = useState()
+  const navigate = useNavigate()
 
   const avatarUrl =
     user.name === 'Gabriel Santos' && user.avatar
@@ -30,6 +32,10 @@ export function Profile() {
   const [avatar, setAvatar] = useState(avatarUrl)
   const [avatarFile, setAvatarFile] = useState(null)
 
+  function handleBack() {
+    navigate(-1)
+  }
+
   async function handleUpdate() {
     const user = {
       name,
@@ -38,7 +44,9 @@ export function Profile() {
       old_password: passwordOld,
     }
 
-    await updateProfile({ user, avatarFile })
+    const userUpdate = Object.assign(user, Upload)
+
+    await updateProfile({ user: userUpdate, avatarFile })
   }
 
   function handleUpdateAvatar(e) {
@@ -93,9 +101,9 @@ export function Profile() {
           </div>
           <Button title="Save" round={true} onClick={handleUpdate} />
         </form>
-        <Link to="/" className="arrow">
+        <button className="arrow" onClick={handleBack}>
           <ArrowLeft size={20} />
-        </Link>
+        </button>
       </div>
     </Wrapper>
   )

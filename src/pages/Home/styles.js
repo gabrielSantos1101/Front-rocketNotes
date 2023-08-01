@@ -25,7 +25,8 @@ export const Menu = styled.div`
   & ul {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    overflow-y: auto;
+    gap: 0.3125rem;
     align-items: center;
 
     height: calc(90% - 8.3rem);
@@ -34,11 +35,20 @@ export const Menu = styled.div`
 
     list-style: none;
 
+    & li {
+      width: 100%;
+      text-align: center;
+    }
+
     & li button {
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
     & li button:hover {
       color: ${({ theme }) => theme.COLORS.ORANGE};
+    }
+
+    &::-webkit-scrollbar-track {
+      margin-block-start: -0.4375rem;
     }
   }
 `

@@ -7,7 +7,7 @@ export function User() {
   const { user } = useAuth()
   const avatarUrl =
     user.name === 'Gabriel Santos' && user.avatar
-      ? 'https://avatars.githubusercontent.com/u/105078208?v=4'
+      ? user.avatar
       : user.avatar
       ? `${api.defaults.baseURL}/files/${user.avatar}`
       : avatarPlaceholder
