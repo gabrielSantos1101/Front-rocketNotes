@@ -47,9 +47,9 @@ export function SignUp() {
     <Wrapper>
       <div className="content">
         <h1>Rocket Notes</h1>
-        <p>Aplicação para salvar e gerenciar seus links úteis.</p>
+        <p>Application to save and manage your useful links.</p>
         <form action="">
-          <h2>Crie sua conta</h2>
+          <h2>Create your account</h2>
           <Input
             Type="text"
             placeholder="Name"
@@ -69,7 +69,7 @@ export function SignUp() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button
-            title="Cadastrar"
+            title="Register"
             round={true}
             onClick={() => {
               handleSignUp()
@@ -79,7 +79,7 @@ export function SignUp() {
 
         <TextButton
           className="footerButton"
-          title="Voltar para login"
+          title="Go back to login"
           onClick={() => handleBack()}
         />
       </div>

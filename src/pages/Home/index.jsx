@@ -62,7 +62,7 @@ export function Home() {
         <ul>
           <li>
             <TextButton
-              title="Todos"
+              title="All"
               onClick={() => handleTagSelected('all')}
               isActive={tagSelected.length === 0}
             />
@@ -79,7 +79,7 @@ export function Home() {
             ))}
         </ul>
         <NewContent>
-          <Button to="/new" title="+ Criar nota" />
+          <Button to="/new" title="+ Create note" />
         </NewContent>
       </Menu>
       <Wrap>
